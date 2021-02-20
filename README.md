@@ -6,7 +6,7 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 
 ## ※注意
 2021/2/19日現在、まだ完全に移行できていません。  
-例えば、コードのベタ書きが多く、環境変数などを用意する必要があります。
+例えば、コードのベタ書きが多く、環境変数などを適切に用意する必要があるのです。。
 
 ## 環境構築手順
 #### 1. docker, docker-composeのインストール
@@ -14,7 +14,7 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 docker version 
 docker-compose version
 ```
-出力がなければインストール
+出力がなければインストール  
 参考：[Dockerのインストール](https://docs.docker.com/get-docker/)  
 参考：[Docker Composeのインストール](https://matsuand.github.io/docs.docker.jp.onthefly/compose/install/)
 
