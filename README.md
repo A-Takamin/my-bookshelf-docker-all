@@ -19,3 +19,9 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 1. ".env"ファイルのキーを".env.local"にコピーし、先ほどメモしていたConfigの値を入れていく。  
 
 参考：[Qiita: Firebaseプロジェクト作成方法](https://qiita.com/yoshi0518/items/25af102845ba05545f98)
+
+#### 3. 起動
+```
+docker-compose build
+docker-compose up -d
+```
