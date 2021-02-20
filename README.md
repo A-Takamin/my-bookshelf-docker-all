@@ -15,6 +15,7 @@ docker version
 docker-compose version
 ```
 出力がなければインストール  
+
 参考：[Dockerのインストール](https://docs.docker.com/get-docker/)  
 参考：[Docker Composeのインストール](https://matsuand.github.io/docs.docker.jp.onthefly/compose/install/)
 
@@ -22,7 +23,8 @@ docker-compose version
 1. Firebaseでプロジェクトを作成し、"firebaseConfig"の値をすべてメモする。  
 1. frontendディレクトリに".env.local"という名前のファイルを作成する。  
 1. ".env"ファイルのキーを".env.local"にコピーし、先ほどメモしていたConfigの値を入れていく。  
-1. firebaseプロジェクトのAuthenticationで、メールとパスワードによる認証をONにしておく。  
+1. firebaseプロジェクトのAuthenticationで、メールとパスワードによる認証をONにしておく。
+  
 参考：[Qiita: Firebaseプロジェクト作成方法](https://qiita.com/yoshi0518/items/25af102845ba05545f98)
 
 #### 3. 起動
