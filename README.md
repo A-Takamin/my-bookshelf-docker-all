@@ -10,6 +10,11 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 
 ## 環境構築手順
 #### 1. docker, docker-composeのインストール
+```
+docker version 
+docker-compose version
+```
+出力がなければインストール
 参考：[Dockerのインストール](https://docs.docker.com/get-docker/)  
 参考：[Docker Composeのインストール](https://matsuand.github.io/docs.docker.jp.onthefly/compose/install/)
 
@@ -21,7 +26,21 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 参考：[Qiita: Firebaseプロジェクト作成方法](https://qiita.com/yoshi0518/items/25af102845ba05545f98)
 
 #### 3. 起動
+ビルド
 ```
 docker-compose build
+```
+
+起動
+```
 docker-compose up -d
+```
+停止
+```
+docker-compose stop
+```
+イメージとコンテナ削除
+```
+docker image prune
+docker container prune
 ```
