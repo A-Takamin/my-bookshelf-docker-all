@@ -49,3 +49,20 @@ docker-compose stop
 docker image prune
 docker container prune
 ```
+
+## アーキテクチャ
+![アーキテクチャ](./ReadMeElements/arch.png "アーキテクチャ")
+
+## アプリ画像
+デプロイがまだできないので、こちらの画像でご紹介します。
+![トップ画面](./ReadMeElements/toppage.png "")  
+![新規登録](./ReadMeElements/register.png "")  
+![ログイン](./ReadMeElements/login.png "")  
+![本棚](./ReadMeElements/home.png "")  
+##### 本を追加  
+![本追加1](./ReadMeElements/bookAdd.png "")  
+![本追加2](./ReadMeElements/bookAdd2.png "")  
+![本追加3](./ReadMeElements/bookSearch.png "")  
+![本追加2](./ReadMeElements/bookAdd3.png "")  
+##### 詳細画面  
+![詳細](./ReadMeElements/bookAdd3.png "")  
