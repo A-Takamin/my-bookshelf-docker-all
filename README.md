@@ -6,10 +6,16 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 
 ## ※注意
 2021/2/19日現在、まだ完全に移行できていません。  
-例えば、コードのベタ書きが多く、環境変数などを用意する必要があります。
+例えば、コードのベタ書きが多く、環境変数などを適切に用意する必要があるのです。。
 
 ## 環境構築手順
 #### 1. docker, docker-composeのインストール
+```
+docker version 
+docker-compose version
+```
+出力がなければインストール  
+
 参考：[Dockerのインストール](https://docs.docker.com/get-docker/)  
 参考：[Docker Composeのインストール](https://matsuand.github.io/docs.docker.jp.onthefly/compose/install/)
 
@@ -17,5 +23,26 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 1. Firebaseでプロジェクトを作成し、"firebaseConfig"の値をすべてメモする。  
 1. frontendディレクトリに".env.local"という名前のファイルを作成する。  
 1. ".env"ファイルのキーを".env.local"にコピーし、先ほどメモしていたConfigの値を入れていく。  
-
+1. firebaseプロジェクトのAuthenticationで、メールとパスワードによる認証をONにしておく。
+  
 参考：[Qiita: Firebaseプロジェクト作成方法](https://qiita.com/yoshi0518/items/25af102845ba05545f98)
+
+#### 3. 起動
+ビルド
+```
+docker-compose build
+```
+
+起動
+```
+docker-compose up -d
+```
+停止
+```
+docker-compose stop
+```
+イメージとコンテナ削除
+```
+docker image prune
+docker container prune
+```
