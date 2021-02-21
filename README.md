@@ -1,42 +1,22 @@
 # my-bookshelf-docker-all
+
+my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジトリ。ローカル開発用。
+
 1st release(2021/2/15)  
 　・ログイン機能  
 　・読了日、評価、感想を添えられる  
+ 
+## 0. 目次
+- [アプリ概要](#アプリ概要)
+- [ローカル環境構築手順](#ローカル環境構築手順)
+- [アーキテクチャ](#アーキテクチャ)
+- [使用技術](#使用技術)
+- [アプリイメージ（画像で紹介！）](#アプリ画像)
 
-### ToDo
-- Buildで毎回Maven依存関係をイチからDLするのを何とかする。。
-- ログ
-- 本推薦機能追加
-- 本IDや本ジャンルなどを追加
-- ユーザーネーム追加
-- SNSログイン追加
-- その他諸々。
+## 1. アプリ概要
+読んだ本の感想などを保管できるアプリです。読んだ本を管理できたらいいな × いろんな技術をまとめて使いたいなと思い、自作しました。詳細については、このREADMEの一番下にアプリ内の画像を用意しています。
 
-## リポジトリ概要
-my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジトリ。  
-ローカル開発はここで行う。
-
-## アプリ概要
-読んだ本の感想などを保管できるアプリです。  
-読んだ本を管理できたらいいな × いろんな技術をまとめて使いたいなと思い、自作しました。  
-
-詳細については、このREADMEの一番下にアプリ内の画像を用意しています。
-
-## アーキテクチャ
-![アーキテクチャ](./ReadMeElements/arch.png "アーキテクチャ")
-
-## 使用技術
-#### フロントエンド
-- Vue.js
-- Firebase
-#### バックエンド
-- Spring Boot
-- PostgreSQL
-#### インフラ（希望）
-①ECS, Code Pipeline, Aurora  
-②S3やCloudFrontをうまく使えるなら使う…？
-
-## ローカル環境構築手順
+## 2. ローカル環境構築手順
 #### 1. docker, docker-composeのインストール
 ```
 docker version 
@@ -75,7 +55,21 @@ docker image prune
 docker container prune
 ```
 
-## アプリ画像
+## 3. アーキテクチャ
+![アーキテクチャ](./ReadMeElements/arch.png "アーキテクチャ")
+
+## 4. 使用技術
+#### フロントエンド
+- Vue.js
+- Firebase
+#### バックエンド
+- Spring Boot
+- PostgreSQL
+#### インフラ（希望）
+①ECS, Code Pipeline, Aurora  
+②S3やCloudFrontをうまく使えるなら使う…？
+
+## 5. アプリ画像
 デプロイがまだできないので、こちらの画像でご紹介します。
 ![トップ画面](./ReadMeElements/toppage.png "")  
 ![新規登録](./ReadMeElements/register.png "")  
