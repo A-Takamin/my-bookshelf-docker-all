@@ -2,9 +2,11 @@
 
 ## リポジトリ概要
 my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジトリ。  
+ローカル開発はここで行う。
 
 ## アプリ概要
 読んだ本の感想などを保管できるアプリです。  
+読んだ本を管理できたらいいな × いろんな技術をまとめて使いたいなと思い、自作しました。
 詳細については、このREADMEの一番下にアプリ内の画像を用意しています。
 
 ■ 1st release(2021/2/15)  
@@ -12,7 +14,7 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 　・読了日、評価、感想を添えられる  
 
 ### ToDo
-- Buildで毎回Maven依存関係をDLするのを何とかする。。
+- Buildで毎回Maven依存関係をイチからDLするのを何とかする。。
 - ログ
 - 本推薦機能追加
 - 本IDや本ジャンルなどを追加
@@ -20,7 +22,18 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 - SNSログイン追加
 - その他諸々。
 
-## 環境構築手順
+## 使用技術
+#### フロントエンド
+- Vue.js
+- Firebase
+#### バックエンド
+- Spring Boot
+- PostgreSQL
+#### インフラ（希望）
+①ECS, Code Pipeline, Aurora  
+②S3やCloudFrontをうまく使えるなら使う…？
+
+## ローカル環境構築手順
 #### 1. docker, docker-composeのインストール
 ```
 docker version 
