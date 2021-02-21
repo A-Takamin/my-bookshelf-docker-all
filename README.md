@@ -12,7 +12,7 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 - [アーキテクチャ](https://github.com/A-Takamin/my-bookshelf-docker-all#3-%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3)
 - [使用技術](https://github.com/A-Takamin/my-bookshelf-docker-all#4-%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)
 - [アプリイメージ（画像で紹介！）](https://github.com/A-Takamin/my-bookshelf-docker-all#5-%E3%82%A2%E3%83%97%E3%83%AA%E7%94%BB%E5%83%8F)
-- [ToDo](https://github.com/A-Takamin/my-bookshelf-docker-all#-ToDo)
+- [課題・ToDo](https://github.com/A-Takamin/my-bookshelf-docker-all#6-todo)
 
 ## 1. アプリ概要
 読んだ本の感想などを保管できるアプリです。  
