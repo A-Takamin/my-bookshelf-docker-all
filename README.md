@@ -7,7 +7,7 @@ my-bookshelfシリーズのfront, back, dbをすべてDocker化したリポジ�
 　・読了日、評価、感想を添えられる  
  
 ## 0. 目次
-- [アプリ概要](#アプリ概要)
+- [アプリ概要](https://github.com/A-Takamin/my-bookshelf-docker-all/blob/main/README.md#1-%E3%82%A2%E3%83%97%E3%83%AA%E6%A6%82%E8%A6%81)
 - [ローカル環境構築手順](#ローカル環境構築手順)
 - [アーキテクチャ](#アーキテクチャ)
 - [使用技術](#使用技術)
