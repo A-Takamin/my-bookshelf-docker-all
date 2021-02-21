@@ -1,3 +1,3 @@
-CREATE TABLE users (
+CREATE TABLE mybookshelf.users (
     uid VARCHAR ( 255 ) NOT NULL PRIMARY KEY
 )

@@ -1,62 +1,63 @@
 <template>
-    <Header />
-    <div class="main_container">
-        <div class="main_inner">
-            <h1>本の詳細</h1>
+    <div>
+        <Header />
+        <div class="main_container">
+            <div class="main_inner">
+                <h1>本の詳細</h1>
 
-            <form>
-                <div class="form_inner">
-                    <div class="img_container">
-                        <img :src="book.img">
-                    </div>
+                <form>
+                    <div class="form_inner">
+                        <div class="img_container">
+                            <img :src="book.img">
+                        </div>
 
-                    <div>
-                        <div class="form_elem_container">
-                            <label>タイトル</label><input v-model="book.title" type="text" class="form_input" readonly>
-                        </div>
-                        <div class="form_elem_conatiner">
-                            <label>読んだ日</label><input v-model="book.readAt" type="date" class="form_input" readonly>
-                        </div>
-                        <div class="form_elem_container">
-                            <label>本の評価</label>
-                            <input class="review_stars form_input" v-model="reviewStars" type="text" readonly>
-                        </div>
-                        
-
-                        <div class="form_elem_container">
-                            <div>
-                                <label>コメント</label>
+                        <div>
+                            <div class="form_elem_container">
+                                <label>タイトル</label><input v-model="book.title" type="text" class="form_input" readonly>
                             </div>
-                            <div>
-                                <textarea v-model="book.comments" placeholder="感想を添えましょう" class="form_input" readonly></textarea>
+                            <div class="form_elem_conatiner">
+                                <label>読んだ日</label><input v-model="book.readAt" type="date" class="form_input" readonly>
+                            </div>
+                            <div class="form_elem_container">
+                                <label>本の評価</label>
+                                <input class="review_stars form_input" v-model="reviewStars" type="text" readonly>
+                            </div>
+                            
+
+                            <div class="form_elem_container">
+                                <div>
+                                    <label>コメント</label>
+                                </div>
+                                <div>
+                                    <textarea v-model="book.comments" placeholder="感想を添えましょう" class="form_input" readonly></textarea>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
 
-            <div class="btn_section" v-if="isModify">
-                <div class="btn_container">
-                    <a href="javascript:void(0)" @click="deleteBook">削除</a>
+                <div class="btn_section" v-if="isModify">
+                    <div class="btn_container">
+                        <a href="javascript:void(0)" @click="deleteBook">削除</a>
+                    </div>
+                    <div class="btn_container">
+                        <a href="javascript:void(0)" @click="finishModify">確定</a>
+                    </div>
                 </div>
-                <div class="btn_container">
-                    <a href="javascript:void(0)" @click="finishModify">確定</a>
+
+                <div class="btn_section" v-else>
+                    <div class="btn_container">
+                        <router-link to="/Home">＜戻る</router-link>
+                    </div>
+                    <div class="btn_container">
+                        <a href="javascript:void(0)" @click="startModify">編集</a>
+                    </div>
                 </div>
+
+
             </div>
-
-            <div class="btn_section" v-else>
-                <div class="btn_container">
-                    <router-link to="/Home">＜戻る</router-link>
-                </div>
-                <div class="btn_container">
-                    <a href="javascript:void(0)" @click="startModify">編集</a>
-                </div>
-            </div>
-
-
         </div>
     </div>
-
 </template>
 
 <script>
@@ -79,7 +80,7 @@ export default {
         }
     },
     created() {
-        axios.get('http://localhost:8081/mybookshelf/book/'+localStorage.getItem('uid')+'/'+this.id, {
+        axios.get(process.env.VUE_APP_BACKEND_ORIGIN+'/mybookshelf/book/'+localStorage.getItem('uid')+'/'+this.id, {
                 headers: {
                     Authorization: localStorage.getItem('jwt')
                 }
@@ -106,7 +107,7 @@ export default {
         },
         finishModify: function() {
             //PUT
-            axios.put('http://localhost:8081/mybookshelf/book/'+localStorage.getItem('uid')+'/'+this.book.serialNo, {
+            axios.put(process.env.VUE_APP_BACKEND_ORIGIN+'/mybookshelf/book/'+localStorage.getItem('uid')+'/'+this.book.serialNo, {
                 title: this.book.title,
                 img: this.book.img,
                 readAt: this.book.readAt,
@@ -127,7 +128,7 @@ export default {
         deleteBook: function() {
             const deletesFlg = confirm('この本を削除しますか？')
             if(deletesFlg) {
-                axios.delete('http://localhost:8081/mybookshelf/book/'+localStorage.getItem('uid')+'/'+this.book.serialNo, {
+                axios.delete(process.env.VUE_APP_BACKEND_ORIGIN+'/mybookshelf/book/'+localStorage.getItem('uid')+'/'+this.book.serialNo, {
                     headers: {
                         Authorization: localStorage.getItem('jwt')
                     }

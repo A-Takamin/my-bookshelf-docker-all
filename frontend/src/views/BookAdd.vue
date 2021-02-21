@@ -1,53 +1,55 @@
 <template>
-    <Header />
-    <div class="main_container">
-        <div class="main_inner">
-            <h1>新しい本を追加</h1>
+    <div>
+        <Header />
+        <div class="main_container">
+            <div class="main_inner">
+                <h1>新しい本を追加</h1>
 
-            <div class="book_search_btn_container">
-                <a href="javascript:void(0)" class="book_search_btn" @click="openModal">本を検索する<br>+</a>
-            </div>
-
-            <section>
-                <Modal @close="closeModal" @decideBook="decideBook" v-if:='showsModal'/>
-            </section>
-            
-            <form>
-                <div class="form_inner">
-                    <div class="img_container">
-                        <img :src="book.img">
-                    </div>
-
-                    <div>
-                        <div class="form_elem_container">
-                            <label>タイトル</label><input v-model="book.title" type="text">
-                        </div>
-                        <div class="form_elem_conatiner">
-                            <label>読んだ日</label><input v-model="book.readAt" type="date">
-                        </div>
-                        <div class="form_elem_container">
-                            <label>本の評価</label>
-                            <input v-model="book.review" type="range" min="1" max="5">
-                        </div>
-                        
-                        <span class="review_stars"> {{ reviewStars }} </span>
-
-                        <div class="form_elem_container">
-                            <div>
-                                <label>コメント</label>
-                            </div>
-                            <div>
-                                <textarea v-model="book.comments" placeholder="感想を添えましょう"></textarea>
-                            </div>
-                        </div>
-                    </div>
+                <div class="book_search_btn_container">
+                    <a href="javascript:void(0)" class="book_search_btn" @click="openModal">本を検索する<br>+</a>
                 </div>
-            </form>
-            <div class="book_add_btn_container">
-                <a href="javascript:void(0)" class="book_add_btn" @click="addBook">本を登録</a>
-            </div>
-            <div class="return_btn_container">
-                <router-link to="/Home">＜戻る</router-link>
+
+                <section>
+                    <Modal @close="closeModal" @decideBook="decideBook" v-if:='showsModal'/>
+                </section>
+                
+                <form>
+                    <div class="form_inner">
+                        <div class="img_container">
+                            <img :src="book.img">
+                        </div>
+
+                        <div>
+                            <div class="form_elem_container">
+                                <label>タイトル</label><input v-model="book.title" type="text">
+                            </div>
+                            <div class="form_elem_conatiner">
+                                <label>読んだ日</label><input v-model="book.readAt" type="date">
+                            </div>
+                            <div class="form_elem_container">
+                                <label>本の評価</label>
+                                <input v-model="book.review" type="range" min="1" max="5">
+                            </div>
+                            
+                            <span class="review_stars"> {{ reviewStars }} </span>
+
+                            <div class="form_elem_container">
+                                <div>
+                                    <label>コメント</label>
+                                </div>
+                                <div>
+                                    <textarea v-model="book.comments" placeholder="感想を添えましょう"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="book_add_btn_container">
+                    <a href="javascript:void(0)" class="book_add_btn" @click="addBook">本を登録</a>
+                </div>
+                <div class="return_btn_container">
+                    <router-link to="/Home">＜戻る</router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -77,7 +79,7 @@ export default {
     methods: {
         addBook: async function() {
             // //POST
-            axios.post('http://localhost:8081/mybookshelf/book/'+localStorage.getItem('uid'), {
+            axios.post(process.env.VUE_APP_BACKEND_ORIGIN+'/mybookshelf/book/'+localStorage.getItem('uid'), {
                 title: this.book.title,
                 img: this.book.img,
                 readAt: this.book.readAt,

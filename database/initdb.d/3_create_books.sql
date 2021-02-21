@@ -1,4 +1,4 @@
-CREATE TABLE books (
+CREATE TABLE mybookshelf.books (
     serial_no serial PRIMARY KEY,
     title VARCHAR ( 255 ) NOT NULL,
 	img VARCHAR ( 255 ) NOT NULL, 
@@ -6,5 +6,5 @@ CREATE TABLE books (
     review smallint NOT NULL,
     comments VARCHAR ( 255 ) NOT NULL,
     user_uid VARCHAR ( 255 ) NOT NULL,
-    FOREIGN KEY (user_uid) REFERENCES public.users (uid)
+    FOREIGN KEY (user_uid) REFERENCES mybookshelf.users (uid)
 )

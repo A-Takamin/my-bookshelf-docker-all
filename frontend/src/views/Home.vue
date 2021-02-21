@@ -1,17 +1,19 @@
 <template>
-    <Header :showsLogout="true"/>
-    <h1>マイ本棚</h1>
-    <section class="bookshelf_container">
-        <div class="bookshelf">
-            <div v-for="book in books" :key="book.serialNo" @click="detail(book.serialNo)" class="book_container">
-                <!-- 本 -->
-                <Book v-bind:img="book.img" v-bind:review="book.review" />
+    <div>
+        <Header :showsLogout="true"/>
+        <h1>マイ本棚</h1>
+        <section class="bookshelf_container">
+            <div class="bookshelf">
+                <div v-for="book in books" :key="book.serialNo" @click="detail(book.serialNo)" class="book_container">
+                    <!-- 本 -->
+                    <Book v-bind:img="book.img" v-bind:review="book.review" />
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="book_add_container">
-        <router-link to="/bookAdd">本を追加する<br>+</router-link>
-    </section>
+        </section>
+        <section class="book_add_container">
+            <router-link to="/bookAdd">本を追加する<br>+</router-link>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -55,7 +57,7 @@ export default {
             })
         }
     },created() {
-        axios.get('http://localhost:8081/mybookshelf/book/'+localStorage.getItem('uid'), {
+        axios.get(process.env.VUE_APP_BACKEND_ORIGIN+'/mybookshelf/book/'+localStorage.getItem('uid'), {
                 headers: {
                     Authorization: localStorage.getItem('jwt')
                 }

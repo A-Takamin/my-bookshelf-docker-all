@@ -1,23 +1,25 @@
 <template>
-    <Header />
-    <div class="main_container">
-        <h1>新規登録する</h1>
-        <form>
-            <input type="email" placeholder="メールアドレス" v-model="email"> 
-            <input type="password" placeholder="パスワード" v-model="password">
-            <input type="password" placeholder="パスワード（再入力）" v-model="password_again">
-            <a class="submit" href="" @click="register">新規登録</a>
-        </form>
-        <div>
-            <p>アカウントを持っていますか？
-                <router-link to="/login">ログインはこちら</router-link>
-            </p>    
+    <div>
+        <Header />
+        <div class="main_container">
+            <h1>新規登録する</h1>
+            <form>
+                <input type="email" placeholder="メールアドレス" v-model="email"> 
+                <input type="password" placeholder="パスワード" v-model="password">
+                <input type="password" placeholder="パスワード（再入力）" v-model="password_again">
+                <a class="submit" href="" @click="register">新規登録</a>
+            </form>
+            <div>
+                <p>アカウントを持っていますか？
+                    <router-link to="/login">ログインはこちら</router-link>
+                </p>    
+            </div>
+            <!-- <div>
+                <p>SNSで新規登録する</p>
+                <div><a>twitter</a></div>
+                <div><a>facebook</a></div>
+            </div> -->
         </div>
-        <!-- <div>
-            <p>SNSで新規登録する</p>
-            <div><a>twitter</a></div>
-            <div><a>facebook</a></div>
-        </div> -->
     </div>
 </template>
 
@@ -45,7 +47,7 @@ export default {
             .then( res => {
 
                 res.user.getIdToken().then( token => {
-                    axios.post('http://localhost:8081/mybookshelf/user/' + res.user.uid, {}, { 
+                    axios.post(process.env.VUE_APP_BACKEND_ORIGIN+'/mybookshelf/user/' + res.user.uid, {}, { 
                         headers: {'Authorization' : token}
                     })
                     .then( () => { 

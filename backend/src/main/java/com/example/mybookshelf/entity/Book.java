@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "books")
+@Table(name = "books", schema="mybookshelf")
 @Data
 public class Book {
 	
