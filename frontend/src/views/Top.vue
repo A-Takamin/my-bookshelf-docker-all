@@ -30,6 +30,11 @@ export default {
   name: 'Home',
   components: {
       Header
+  },
+  created() {
+      if(localStorage.getItem('uid')) {
+        this.$router.push('/Home')
+      }
   }
 }
 </script>

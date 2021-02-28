@@ -34,6 +34,7 @@ export default {
         searchBooks: function() {
             axios.get('https://www.googleapis.com/books/v1/volumes?q='+this.searchWord)
             .then( result => {
+              console.log(result)
                 const hitBooks = result.data.items
                 this.searchResultBooks = []
                 hitBooks.forEach(elem => {
