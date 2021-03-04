@@ -32,8 +32,8 @@ public class AppController {
 	 * @return
 	 */
 	@PostMapping("/user/{uid}")
-	public String createUser(@PathVariable("uid") String uid) {
-		userService.createUser(uid);
+	public String createUser(@PathVariable("uid") String uid, @RequestBody UserForm userForm) {
+		userService.createUser(uid, userForm);
 		return "success1";
 	}
 //	/**
@@ -41,8 +41,8 @@ public class AppController {
 //	 * @return
 //	 */
 //	@PutMapping("/user/{uid}")
-//	public String modifyUser(@PathVariable("uid") String uid) {
-//		
+//	public String modifyUser(@PathVariable("uid") String uid, @RequestBody UserForm userForm) {
+//		userService.modifyUser(uid, userForm);
 //		return "success2";
 //	}
 //	/**
@@ -50,7 +50,7 @@ public class AppController {
 //	 * @return
 //	 */
 //	@DeleteMapping("/user/{uid}")
-//	public String deleteUser(@PathVariable("uid") String uid) {
+//	public String deleteUser(@PathVariable("uid") String uid, @RequestBody UserForm userForm) {
 //		return "success3";
 //	}
 	

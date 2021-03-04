@@ -20,4 +20,6 @@ public class User {
 	@Id
 	/** uid: firebaseで一意なToken */
 	private String uid;
+
+	private String name;
 }

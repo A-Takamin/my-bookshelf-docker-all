@@ -34,7 +34,8 @@ export default {
         return {
             email: '',
             password: '',
-            password_again: ''
+            password_again: '',
+            errorMsg: ''
         }
     },
     components: {
